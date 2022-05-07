@@ -19,8 +19,11 @@ public class Person {
 	@Column(nullable = false)
 	private String name;
 	
+	@Column(nullable = false)
 	private String document;
 	
+	@Column(nullable = false)
+	private String email;
 	
-
+	
 }
