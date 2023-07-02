@@ -29,6 +29,7 @@ hs_err_pid*
 *.war
 *.ear
 *.class
+*.settings
 
 # eclipse specific git ignore
 *.pydevproject

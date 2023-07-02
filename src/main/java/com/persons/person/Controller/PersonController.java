@@ -1,6 +1,7 @@
 package com.persons.person.Controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,6 +27,16 @@ public class PersonController {
 	@RequestMapping(value="/all", method=RequestMethod.GET)
 	public List<Person> returnAll(){
 		 return service.returnAll();
+	}
+
+	@RequestMapping(value="/getperson", method=RequestMethod.GET)
+	public Person returnByID(@RequestBody Person person){
+		 return service.getPerson(person.getId());
+	}
+
+	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
+	public Person returnDeleteAll(@RequestBody Person person){
+		 return service.deletePerson(person);
 	}
 
 }

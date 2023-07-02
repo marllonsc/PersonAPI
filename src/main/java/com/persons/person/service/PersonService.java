@@ -1,6 +1,7 @@
 package com.persons.person.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,16 +21,27 @@ public class PersonService {
 	}
 
 	// READ
-	public List<Person> getPerson() {
-	    return repository.findAll();
+	public Person getPerson(Integer id) {
+	    Optional<Person> person = repository.findById(id);
+		if(person.isEmpty()){
+			return null;
+		}
+		return person.get();
 	}
 
 	// DELETE
-	public void deletePerson(Integer id) {
-		repository.deleteById(id);
+	public Person deletePerson(Person person) {
+		Person deletePerson = this.getPerson(person.getId());
+		if(deletePerson == null){
+			return null;
+		}
+		repository.delete(deletePerson);
+		return deletePerson;
 	}
 	
+	// RETURN ALL
 	public List<Person> returnAll() {
 		return repository.findAll();
 	}
+
 }
