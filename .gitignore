@@ -46,6 +46,8 @@ local.properties
 .classpath
 .settings/
 .loadpath
+.history/
+.history
 
 # External tool builders
 .externalToolBuilders/
