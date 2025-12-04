@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: person-api-config
+data:
+  SPRING_DATASOURCE_URL: "jdbc:mysql://192.168.1.17/my_db?useSSL=false&allowPublicKeyRetrieval=true"
+  SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
+  SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: "org.hibernate.dialect.MySQL5InnoDBDialect"
